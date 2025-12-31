@@ -1,7 +1,7 @@
 ![Python](https://img.shields.io/badge/python-3.10-blue.svg) 
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
-# EmailAnalyzer
-With EmailAnalyzer you can able to analyze your suspicious emails. You can extract headers, links and hashes from the .eml file
+# Email Forensics
+With Email Forensics you can able to analyze your suspicious emails. You can extract headers, links and hashes from the .eml file
 
 ## Usage
 ```
@@ -31,15 +31,15 @@ If you want to extract the outputs to a file you can use this commands:
 ```
 python3 email-analyzer.py -f <eml file> -o report.html
 ```
-Check the ![Wiki Page](https://github.com/keraattin/EmailAnalyzer/wiki/Generate-an-HTML-Report) for details
-![image](https://github.com/keraattin/EmailAnalyzer/assets/6709252/b449246e-881c-4d2d-822b-71c4d4a21ca1)
+Check the ![Wiki Page](https://github.com/ghanyelisha/l500-emailforensics/wiki/How-to-generate-an-HTML-Report) for details
+![image](https://github.com/user-attachments/assets/832098c9-2c35-4325-bd40-6cf3b89addde)
 or 
 ```
-python3 email-analyzer.py -f <eml file> -o report.json
+<!-- python3 email-analyzer.py -f <eml file> -o report.json
 ```
-Check the ![Wiki Page](https://github.com/keraattin/EmailAnalyzer/wiki/Generate-a-JSON-Report) for details
+Check the ![Wiki Page](https://github.com/ghanyelisha/l500-emailforensics/wiki/How-to-generate-an-HTML-Report) for details -->
 
-> Only supported **JSON** and **HTML** formats currently.
+> Only supported  **HTML** format currently.
 
 ## To get ONLY Headers
 ```
@@ -74,7 +74,7 @@ Fri, 25 Nov 2022 12:36:36 +0000 (UTC)
 _________________________________________________________
 _________________________________________________________
 [subject]
-How to use EmailAnalyzer
+How to use Email Forensics
 _________________________________________________________
 _________________________________________________________
 [reply-to]

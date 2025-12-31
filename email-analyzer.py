@@ -400,7 +400,7 @@ if __name__ == '__main__':
     app_data = json.loads('{"Information": {}, "Analysis":{}}')
     app_data["Information"]["Project"] = {
         "Name":"Email Forensics",
-        "Url":"https://github.com/keraattin/l500-emailforensics",
+        "Url":"https://github.com/ghanyelisha/l500-emailforensics",
         "Version": "2.0",
     }
     app_data["Information"]["Scan"] = {

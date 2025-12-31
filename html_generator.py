@@ -264,7 +264,7 @@ def generate_table_from_json(json_obj):
         </head>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><i class="fa fa-envelope"></i> Email Analyzer</a>
+            <a class="navbar-brand" href="#"><i class="fa fa-envelope"></i> Email Forensics</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -312,13 +312,13 @@ def generate_table_from_json(json_obj):
 
             <div class="d-flex">
                 <!-- Star -->
-                <a class="github-button" href="https://github.com/keraattin/EmailAnalyzer" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star keraattin/EmailAnalyzer on GitHub">Star</a>
+                <a class="github-button" href="https://github.com/ghanyelisha/l500-emailforensics" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ghanyelisha/l500-emailforensics on GitHub">Star</a>
                 &nbsp;
                 <!-- Fork -->
-                <a class="github-button" href="https://github.com/keraattin/EmailAnalyzer/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork keraattin/EmailAnalyzer on GitHub">Fork</a>
+                <a class="github-button" href="https://github.com/ghanyelisha/l500-emailforensics/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork ghanyelisha/l500-emailforensics on GitHub">Fork</a>
                 &nbsp;
                 <!-- Follow -->
-                <a class="github-button" href="https://github.com/keraattin" data-size="large" data-show-count="true" aria-label="Follow @keraattin on GitHub">Follow @keraattin</a>
+                <a class="github-button" href="https://github.com/ghanyelisha" data-size="large" data-show-count="true" aria-label="Follow @ghanyelisha on GitHub">Follow @ghanyelisha</a>
             </div>
         </nav>
 
