@@ -17,7 +17,7 @@ options:
   -a, --attachments     To get the Attachments from the Email
   -i, --investigate     Activate if you want an investigation
   -o OUTPUT, --output OUTPUT
-                        Name of the Output file (Only HTML or JSON format supported)
+   Name of the Output file (Only HTML format supported)
 ```
 
 ## Run All
