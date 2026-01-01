@@ -1,0 +1,88 @@
+Delivered-To: ghanyelisha@gmail.com
+Received: by 2002:a05:7118:a801:b0:1b3:4cfd:daa4 with SMTP id f1csp6714872ggp;
+        Wed, 31 Dec 2025 06:27:37 -0800 (PST)
+X-Received: by 2002:a05:600c:8287:b0:477:76bf:e1fb with SMTP id 5b1f17b1804b1-47d1955578bmr506631735e9.16.1767191257259;
+        Wed, 31 Dec 2025 06:27:37 -0800 (PST)
+Reply-To: fake-support@phishingsite.com**
+ARC-Seal: i=1; a=rsa-sha256; t=1767191257; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fCLp6T+GbLHMr0vp72V1xN26veyI9F24CR/Zb13vuPZ6doQMDSbeL0ivFoHxxVgN8x
+         5D+yaNqCEzB2eDvNVbi+8HPdTRmbtesyjBMSfY8xwohttbUoCzYBcFbrtMiMtfcqJH/n
+         0wE8+vuoMmDu93JszthVKc0ch5In623DBz1fINUGt844oFg4fQnhEz757Qq9H7ZuQK4h
+         LRpbwWwHjX5rqejqEaZ/n21rVXIpoJxooE2qJmrF0pCmTgCaMMt6FY9NDRTT6LhEofCY
+         xycB3Ki6pS+iCT2edj9eYbcHRAqhKy4jMhiz3m6NM0rhNbM48TzN1HaZfIFWG5NletHN
+         0LRw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=LiI8tcWj+72NcN2Xwt9DYTX/ElK+P9qHpm4KLeZfXVY=;
+        fh=/td9ZSmHoOnzxhwj2B+C4hn5bI9VMnXDbsdnrl2A3gU=;
+        b=KurCYkzBu2aDBBkwivP9sSPz+PAgdCDdN7HUAow5l0CRuRmPUVDF+t1vFBzJj4yUWs
+         Jr5IFMZlVIvD2FTte8PDz9vu6t4NSgty5tIewe3nSWneR+mhj5RkdMiMYne03ctnWVLH
+         WxqZ4NRok34Bjz7+T4Bk7ZItSYICNq4NwilWtB3nuNTcud+dPANsOgk8mPrrJ0LT38Vg
+         +j8dmyaJdlJCOxF1YgLiBlkTCeBgYxQomTA9XvZ7136FNH+RCFr3pjl1V7TTCvcZCShe
+         PNNW1JVvK65I3OmXKHWVJOX2/Y/v4PpO7NhOk/OsJVYErM9XHFqBHvOM3dENzIMKDvfc
+         f/pA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=TMUawP+U;
+       spf=pass (google.com: domain of tatapeterghany@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=tatapeterghany@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <tatapeterghany@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 5b1f17b1804b1-47be3a2ae9dsor36194185e9.1.2025.12.31.06.27.37
+        for <ghanyelisha@gmail.com>
+        (Google Transport Security);
+        Wed, 31 Dec 2025 06:27:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of tatapeterghany@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=TMUawP+U;
+       spf=pass (google.com: domain of tatapeterghany@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=tatapeterghany@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1767191256; x=1767796056; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=LiI8tcWj+72NcN2Xwt9DYTX/ElK+P9qHpm4KLeZfXVY=;
+        b=TMUawP+USfZL7vuBJgZX0Brptz4oXYvArKoF16KgRGNMnGeYWJzRDredq6bZmtpJ7X
+         N7vQZ8cFENcyqW9h7l3ZpB4HAftq98/ZOBD9zBMEh+NCkDwCIwQ7zf4HISKgMqpfmXTc
+         C0P7MTs76eWpIUSxRbUy/SDekcosPsvT/5B0claVFq5jRoZccNm+OWXOME+GVU2usl4O
+         +Jl4II5WQOPFTidoWYMb2dfVermd+0np9kki4wbUK6dcHQz78VSWF9K4rfwZssODjX39
+         JwDVV+ZVjPXZbOyFcdXoVkwerU/SDlkPC5Bdjtq7MA68E+C0IU4+Cx5/VAw+ezRY0Szl
+         NPqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1767191256; x=1767796056;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LiI8tcWj+72NcN2Xwt9DYTX/ElK+P9qHpm4KLeZfXVY=;
+        b=ZfbRSEjY3nXWq8y3Ig7KDFZ26TG/NEl2uhgZPcljkNRg7k58N1KIspOUkk+GLfdmp6
+         hDX7GCcsvvJv8xd9+LDt9duC43pSyU6TdCvGrL4s7OBR9kAr8oIV5Uyog5Dcgqv2r/Pj
+         B9pvk/f5Kh3PbTVfJ9ruc/CQOz5tnnIl2lWYUOn+KW/bcD1sQFDU89fD4nFS41Nwx35q
+         46tmerPZrO/5VSeS3LQJQzvbrpZzmOrmNxJbjlELf0GjR6tfjPbdBK3/xvJ2ryOpBByj
+         EOKexVbxEz9ctWGslFKTbF1b5JYTnYHg2hClVFDEv4vSQm9wT7dB6yJ1vlvr0oHsXlPV
+         X1YQ==
+X-Gm-Message-State: AOJu0YxUqlHzG4NCvQpe/j1/Zerbf6WfkIxSMBZzb+roGCZeZIP7xxN+ XC1lPdrj0sx/kmElVy1fNFNA6sEU7dZ3vMgiGOargX/l4l0U5Oo5Q45C+oBBzAsgP6ke2r7hvk2 1aAxrk62ptjl3hRGrs0OnxP80tkeUSAUmbA==
+X-Gm-Gg: AY/fxX6jjobKREIlFYQjo6RZchm8ZJpLMrkBV6seCwb+vGiuGSr3EOdNSIaLjCNgVbE m3E4IOrO5EOP9Uj003kzo0+7cV6aipha1koI+tXDIaPMC+HmNHavmigYs0N86LmpgthRwi0LTj+ wsnYq3Xf46596JS2LMXj+nR9dbfO5+nb8s6/v9o1ZCPRSyBPDoIBY58k6JvcSTqZ/N+vKJdxmhO rdG5+jt3y3X70iAX7sKlX2211clUKNbzwkbEZeGY5Rv7COwjDPbq9xNCF8cMaPHH6qY3O0bP7Xy jBc=
+X-Google-Smtp-Source: AGHT+IHBfYWfO/sp2GdWamzraQLbbhrck/trkDC37SZ1d3u5wcyQRI8Wx+TTXkPgnS6ANIIbmcvxTR8IGJikuD/nuHY=
+X-Received: by 2002:a05:600c:3151:b0:477:a203:66dd with SMTP id 5b1f17b1804b1-47d197f69demr281927955e9.2.1767191256455; Wed, 31 Dec 2025 06:27:36 -0800 (PST)
+MIME-Version: 1.0
+From: The Design Preacher <tatapeterghany@gmail.com>
+Date: Wed, 31 Dec 2025 15:25:00 +0100
+X-Gm-Features: AQt7F2pABfhya0esOEcnomR_XQ6D9XEoGkjU1Qyp_vadLWotdlzlUYvxd1Hpya8
+Message-ID: <CAGr_GF5ribq3Su2G2_iC+jUjZ+k1jLMM6TaTvocOdLzXB6Tf2A@mail.gmail.com>
+Subject: This is a test email
+To: Ghany Elisha <ghanyelisha@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000175fde06474047c7"
+
+--000000000000175fde06474047c7
+Content-Type: text/plain; charset="UTF-8"
+
+This is test content for testing purposes only
+
+--000000000000175fde06474047c7
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">This is test content for testing purposes only</div>
+
+--000000000000175fde06474047c7--

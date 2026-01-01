@@ -28,7 +28,7 @@ ARC-Authentication-Results: i=1; mx.google.com;
        dkim=pass header.i=@github.com header.s=pf2023 header.b=fQv4ZXG8;
        spf=pass (google.com: domain of noreply@github.com designates 192.30.252.202 as permitted sender) smtp.mailfrom=noreply@github.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
-Return-Path: <noreply@github.com>
+Return-Path: <noeply@github.com>
 Received: from out-19.smtp.github.com (out-19.smtp.github.com. [192.30.252.202])
         by mx.google.com with ESMTPS id d75a77b69052e-4f4ac6a2c3asi406734491cf.358.2025.12.30.22.47.53
         for <ghanyelisha@gmail.com>

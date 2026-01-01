@@ -1,0 +1,37 @@
+Delivered-To: ghanyelisha@gmail.com
+Received: by 2002:a05:7118:a801:b0:1b3:4cfd:daa4 with SMTP id f1csp6714872ggp;
+        Wed, 31 Dec 2025 06:27:37 -0800 (PST)
+X-Received: by 2002:a05:600c:8287:b0:477:76bf:e1fb with SMTP id 5b1f17b1804b1-47d1955578bmr506631735e9.16.1767191257259;
+        Wed, 31 Dec 2025 06:27:37 -0800 (PST)
+X-Sender-IP: 185.234.217.45**  
+Reply-To: support@fake-gmail-security.com 
+From: The Design Preacher <tatapeterghany@gmail.com>
+To: Ghany Elisha <ghanyelisha@gmail.com>
+Subject: URGENT: Gmail Security Alert - Account Compromised!
+ARC-Seal: i=1; a=rsa-sha256; t=1767191257; cv=FAIL  
+Date: Wed, 31 Dec 2025 15:25:00 +0100
+Message-ID: <MALWARE-C2-18523421745@phishingsite.ru>
+X-Originating-IP: 185.234.217.45**  
+
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="malware_boundary"
+
+--malware_boundary
+Content-Type: text/html; charset="UTF-8"
+
+<div style="font-family:Arial">
+<h2> GMAIL SECURITY ALERT </h2>
+<p>Your account has been compromised. <a href="http://gmail-security-update.net/verify?user=ghanyelisha">CLICK HERE TO SECURE</a></p>
+<p>Or download our security update: <a href="http://185.234.217.45/gmail_fix.exe">Download Fix</a></p>
+</div>
+
+--malware_boundary
+Content-Type: application/octet-stream;
+    name="Gmail_Security_Update.exe"
+Content-Disposition: attachment; filename="Gmail_Security_Update.exe"
+Content-Transfer-Encoding: base64
+
+**TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...**  
+** Emotet malware payload (truncated base64)**
+
+--malware_boundary--

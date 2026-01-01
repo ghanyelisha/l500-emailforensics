@@ -87,6 +87,154 @@ def get_headers(mail_data : str, investigation):
                 "From": mailfrom,
                 "Conclusion":conclusion
             }
+        
+        # MALICIOUS EMAIL DETECTION (New Block)
+        malicious_score = 0
+        malicious_indicators = []
+        
+        # 1. SUBJECT LINE CHECKS (Phishing keywords)
+        suspicious_subjects = [
+            'urgent', 'account suspended', 'security alert', 'verify now',
+            'password reset', 'billing issue', 'action required', 'suspicious login'
+        ]
+        subject_lower = data["Headers"]["Data"].get("subject", "").lower()
+        for keyword in suspicious_subjects:
+            if keyword in subject_lower:
+                malicious_score += 2
+                malicious_indicators.append(f"Suspicious subject: '{keyword}'")
+        
+        # 2. DOMAIN MISMATCH CHECK (From domain vs Received domains)
+        if data["Headers"]["Data"].get("from"):
+            from_domain = re.findall(r'@([\w\.-]+)', data["Headers"]["Data"]["from"])[0]
+            received_domains = re.findall(r'([\w\.-]+\.(?:com|net|org|io))', 
+                                        data["Headers"]["Data"].get("received", ""))
+            if from_domain not in received_domains:
+                malicious_score += 3
+                malicious_indicators.append(f"Domain mismatch: {from_domain} not in Received path")
+        
+        # 3. SUSPICIOUS IP PATTERNS
+        suspicious_ips = re.findall(r'\b(?:10\.|192\.168\.|172\.(?:1[6-9]|2[0-9]|3[0-1])\.|127\.|169\.254\.)', 
+                                str(data["Headers"]["Data"]))
+        if suspicious_ips:
+            malicious_score += 2
+            malicious_indicators.append(f"Private IPs in headers: {suspicious_ips[:2]}")
+        
+        # 4. CHECK FOR X-SENDER-IP and reputation flags
+        sender_ip = data["Headers"]["Data"].get("x-sender-ip")
+        if sender_ip and any(char.isdigit() for char in sender_ip):
+            malicious_score += 1
+            malicious_indicators.append(f"Custom sender IP: {sender_ip}")
+        
+        # 5. AUTHENTICATION FAILURE CHECKS
+        auth_headers = ['arc-seal', 'dkim-signature', 'spf', 'dmarc']
+        for auth in auth_headers:
+            if auth in data["Headers"]["Data"] and 'fail' in data["Headers"]["Data"][auth].lower():
+                malicious_score += 3
+                malicious_indicators.append(f"Auth failure: {auth}")
+        
+        # RISK LEVEL CLASSIFICATION
+        if malicious_score >= 7:
+            risk_level = "🚨 HIGH RISK - MALICIOUS"
+        elif malicious_score >= 4:
+            risk_level = "⚠️  MEDIUM RISK - SUSPICIOUS"
+        else:
+            risk_level = "✅ LOW RISK - CLEAN"
+        
+        # Store results
+        data["Headers"]["Investigation"]["Malicious Check"] = {
+            "Risk Score": malicious_score,
+            "Risk Level": risk_level,
+            "Indicators": malicious_indicators if malicious_indicators else ["No malicious indicators found"],
+            "Details": {
+                "Subject Analysis": f"Score: {sum(2 for k in suspicious_subjects if k in subject_lower)}",
+                "Domain Check": f"From: {from_domain}" if 'from_domain' in locals() else "N/A",
+                "IP Analysis": f"Found: {len(suspicious_ips)} private IPs" if suspicious_ips else "None"
+            }
+        }
+       
+    # MALICIOUS ATTACHMENT DETECTION (New Block)
+    if investigation and args.attachments:  # Only run if attachments exist
+        malicious_attach_score = 0
+        malicious_attachments = []
+        
+        for index, attachment in enumerate(attachments, start=1):
+            attach_info = {}
+            filename = attachment["filename"].lower()
+            payload = attachment.get("payload", b"")  # Get raw payload
+            
+            # 1. DANGEROUS FILE EXTENSIONS
+            dangerous_exts = ['.exe', '.scr', '.bat', '.cmd', '.pif', '.vbs', '.js', '.jar']
+            file_ext = os.path.splitext(filename)[1]
+            if file_ext in dangerous_exts:
+                malicious_attach_score += 4
+                attach_info["Risk"] = "CRITICAL - Executable detected"
+                attach_info["Extension"] = file_ext
+            
+            # 2. SUSPICIOUS FILENAME PATTERNS
+            suspicious_names = ['invoice', 'statement', 'update', 'patch', 'fix', 'security', 'document']
+            for pattern in suspicious_names:
+                if pattern in filename:
+                    malicious_attach_score += 2
+                    attach_info["Risk"] = "HIGH - Suspicious filename"
+                    break
+            
+            # 3. DOUBLE EXTENSION TRICK (invoice.pdf.exe)
+            if '.' in filename and len(filename.split('.')) > 2:
+                malicious_attach_score += 3
+                attach_info["Risk"] = "HIGH - Double extension"
+            
+            # 4. EMBEDDED SCRIPTS (JS/VBS in content)
+            payload_str = payload[:1000].decode('utf-8', errors='ignore').lower()
+            script_indicators = ['<script>', 'javascript:', 'vbscript:', 'eval(']
+            for script in script_indicators:
+                if script in payload_str:
+                    malicious_attach_score += 5
+                    attach_info["Risk"] = "CRITICAL - Embedded script"
+                    break
+            
+            # 5. MACRO CONTENT (Office docs)
+            macro_indicators = ['vba.', 'macro', 'sub ', 'function ']
+            for macro in macro_indicators:
+                if macro in payload_str:
+                    malicious_attach_score += 4
+                    attach_info["Risk"] = "HIGH - Macro content"
+                    break
+            
+            # 6. SIZE ANOMALIES (Too small/large)
+            size_kb = len(payload) / 1024
+            if size_kb < 1 or size_kb > 50000:  # <1KB or >50MB
+                malicious_attach_score += 1
+                attach_info["Size Risk"] = f"{size_kb:.1f}KB (anomalous)"
+            
+            # Store attachment analysis
+            if attach_info:
+                malicious_attachments.append({
+                    "Filename": attachment["filename"],
+                    "Score": malicious_attach_score,
+                    "Details": attach_info
+                })
+        
+        # ATTACHMENT RISK CLASSIFICATION
+        if malicious_attach_score >= 8:
+            attach_risk = "CRITICAL - MALWARE CONFIRMED"
+        elif malicious_attach_score >= 4:
+            attach_risk = "HIGH - MALICIOUS ATTACHMENT"
+        elif malicious_attach_score >= 1:
+            attach_risk = "MEDIUM - SUSPICIOUS ATTACHMENT"
+        else:
+            attach_risk = "LOW - No malicious attachments"
+        
+        # Store results in JSON
+        data["Attachments"]["Investigation"]["Malicious Analysis"] = {
+            "Total Score": malicious_attach_score,
+            "Risk Level": attach_risk,
+            "Attachments Analyzed": len(attachments),
+            "Malicious Files": malicious_attachments if malicious_attachments else ["None detected"],
+            "Summary": f"{len(malicious_attachments)}/{len(attachments)} suspicious files"
+        }
+
+            
+        
 
     return data
 

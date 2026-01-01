@@ -1,0 +1,8 @@
+Delivered-To: ghanyelisha@gmail.com
+Received: by 2002:a05:7118:a801:b0:1b3:4cfd:daa4 with SMTP id f1csp6534391ggp;
+        Tue, 30 Dec 2025 22:47:54 -0800 (PST)
+**Reply-To: support@fake-github-security.com**  ← RED FLAG
+From: GitHub <noreply@github.com>
+To: Ghany Elisha <ghanyelisha@gmail.com>
+Subject: [GitHub] Sudo email verification code
+X-Sender-IP: 192.168.1.100  ← Suspicious internal IP
