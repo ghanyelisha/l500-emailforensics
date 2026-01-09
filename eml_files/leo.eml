@@ -1,0 +1,255 @@
+Delivered-To: ghanyelisha@gmail.com
+Received: by 2002:a05:7119:40a3:b0:1b3:4cfd:daa4 with SMTP id n35csp464987ggh;
+        Wed, 7 Jan 2026 13:26:44 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFox3hmmRGQHRzn7NLuDGTGd9KTuaATcJeEHnYTwr1A3OMQvPzC5L9l/sPH/Id6CBoRF719
+X-Received: by 2002:a05:6000:2084:b0:430:f742:fbb8 with SMTP id ffacd0b85a97d-432c3775ad0mr5195191f8f.21.1767821204256;
+        Wed, 07 Jan 2026 13:26:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1767821204; cv=none;
+        d=google.com; s=arc-20240605;
+        b=cBYfyEnOLwyPepR2cKItYFcLY7NRbtLPOONiTXmf4PSxohPnsRTwRtqJ3VKsAhrHLn
+         rEo/Se/Ogm2MCpymBLELzJEBo+iop71LtP1st1v4biiWWYKYzLNpaP72WtMf3+/sp0v7
+         nkZnHfXd/NTqwAlrewaIRGK0K50brBpv3mlBNqCPCbgFdi2sA2/prA2uQVSmPcL4EQHK
+         lZVFzse2LFnZa7TPwpDp2F/Wj/s4L+JV53+GxJ5/vpGaSt1YkTE+d/fvrD5cxhv1ZhR6
+         eHHeWgeOqwHmlxrZbqiHR36BKwmDLUa8dWVsdphsONCZHYJmkXMVpWzIO9MfPxlUmzN2
+         c4hQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=q0FzxsA1FZ/Y54X/3AQsZdPyQAsYZV0KLfKHFnqZkSQ=;
+        fh=JFB08xKX0myWLORCdQLiKE8VSaZZGyaKveGu7zD7yXI=;
+        b=D+2V/Y0E+gEQ/8M8sGK7AvTSQpUCHZCxTQvFD2SPUmi7fbvDanfQpFL1sUxC0vyL7N
+         yogTal+ce5HE+sqcGEiVLK+xFdJ4jrGIy7HyqIzQV0DiSaAbmsQjYc+x0PKKmIzYKIrd
+         x7ELllts/jZN+iO9djgjzrK+Y4eWCEThSPL7UzyUEWGgCFpes1d/ZWlgOMEuMUNn9yJN
+         RWupeVTZMkY+8tab74TU5C9qiqosDdgvVHxKrTuFwAdcwCWEy1AZTCGiEKP2Tnc14a4O
+         IgcFI5/kGvzGWsqv7PH122jeNp2Co/GiXkAIFP89BsKTgUPSmdzXY0VIW+EKFCLte4sD
+         1oLA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendprem.com header.s=vzhni5cg7imkfqnqxc3avw3lfiba7pub header.b=mpK1aUl6;
+       dkim=pass header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn header.b=lRyOcH3i;
+       spf=none (google.com: 0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@mail.sendprem.com does not designate permitted sender hosts) smtp.mailfrom=0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@mail.sendprem.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sendprem.com
+Return-Path: <0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@mail.sendprem.com>
+Received: from a7-40.smtp-out.eu-west-1.amazonses.com (a7-40.smtp-out.eu-west-1.amazonses.com. [54.240.7.40])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-432bd0d9bc7si9255099f8f.34.2026.01.07.13.26.44
+        for <ghanyelisha@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 07 Jan 2026 13:26:44 -0800 (PST)
+Received-SPF: none (google.com: 0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@mail.sendprem.com does not designate permitted sender hosts) client-ip=54.240.7.40;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendprem.com header.s=vzhni5cg7imkfqnqxc3avw3lfiba7pub header.b=mpK1aUl6;
+       dkim=pass header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn header.b=lRyOcH3i;
+       spf=none (google.com: 0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@mail.sendprem.com does not designate permitted sender hosts) smtp.mailfrom=0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@mail.sendprem.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sendprem.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=vzhni5cg7imkfqnqxc3avw3lfiba7pub; d=sendprem.com; t=1767821203; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=KlwKKw5QUTSIh8l/a32kXonzNmCr9BDbTkMian8ugZc=; b=mpK1aUl6Q9FFcnRxGg0nbsfcWw/5sAb9kDOT0h5wc8Y0nuYznk0K8qQe9UkmJRgn ucC3JG/BakCC5JfWkniuOYi6HXtQKrOCmKatUV5Pg6rYat2sG6u9o4RpXjX3HPfzlBB iEAxa7DFcxBYjZrxQUWuVAaSWaDwqHtaeqqykqAkMdtaLbHefVk5iBzHAtv+1vaSBwx hRfOv9igRLykvC0tBn/pmeACUGFO1UZosXg5Yo9gmIhaLQp4/qVm4d40iaAifK/yjv4 Z5+NZL6yg01/EX716f1Oj+UEIGjlRtx+cAMvfzFxcaQmThv6H6Fm5bQvPjz4alERo6H DAS80ryXuQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn; d=amazonses.com; t=1767821203; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=KlwKKw5QUTSIh8l/a32kXonzNmCr9BDbTkMian8ugZc=; b=lRyOcH3itaRgLiUpa8l7SwzyHxG3ZqYw/GbjUKf0dm6HeadJ39CBJ0rIyCQvcSmp LiUDljI5rMt8wWWK5cOyZAoM62J/w9zEDTY+hsZ39EpcUztT8laDJboSL3tZdZ1kbT7 0aPF6Rq4FEWJlAERgmcWRMIo0SjUoQMi8KKbGRJc=
+From: Temi from Jasper <mail@sendprem.com>
+To: ghanyelisha@gmail.com
+Subject: New Year, New Tax Policies.
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0102019b9a5ad969-cbdd99de-9a63-4e25-aaa7-cb10f5f81e8b-000000@eu-west-1.amazonses.com>
+Date: Wed, 7 Jan 2026 21:26:43 +0000
+Feedback-ID: ::1.eu-west-1.t7Tyg8eYrmWzhkgBuBOOayLE8NDL1aYQpdU7wEFFRmo=:AmazonSES
+X-SES-Outgoing: 2026.01.07-54.240.7.40
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Get a step ahead at SMEFest2026.</title>
+    <style type=3D"text/css">
+        /* Client-specific fixes */
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalCla=
+ss font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+        /* iOS Blue Links */
+        a[x-apple-data-detectors] { color: inherit !important; text-decorat=
+ion: none !important; font-size: inherit !important; font-family: inherit !=
+important; font-weight: inherit !important; line-height: inherit !important=
+; }
+    </style>
+</head>
+<body style=3D"margin:0; padding:0; font-family:'Helvetica Neue', Arial, sa=
+ns-serif; line-height:1.6; color:#333333; background-color:#f7f9fc; -webkit=
+-text-size-adjust:100%; -ms-text-size-adjust:100%; width:100% !important;">
+    <!--[if mso]>
+    <style type=3D"text/css">
+    .body-table { width: 100% !important; }
+    .container-table { width: 600px !important; }
+    .mobile-padding { padding: 20px 15px !important; }
+    .mobile-text { font-size: 14px !important; }
+    .mobile-title { font-size: 24px !important; }
+    .mobile-heading { font-size: 20px !important; }
+    .mobile-image { height: 180px !important; }
+    </style>
+    <![endif]-->
+   =20
+    <center>
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" bgcolor=3D"#f7f9fc" class=3D"body-table">
+            <tr>
+                <td align=3D"center" valign=3D"top">
+                    <!-- Email Container -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"max-width:600px; width:100%; background-color:#fff=
+fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0=
+.05);" class=3D"container-table">
+                        <!-- Header -->
+                    =20
+                       =20
+                        <!-- Content -->
+                        <tr>
+                            <td style=3D"padding:30px;" class=3D"mobile-pad=
+ding">
+                                <!-- First Image Placeholder -->           =
+               =20
+                               =20
+                                <!-- Title and Date -->
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%">
+                                    <!-- <tr>
+                                        <td style=3D"font-size:28px; color:=
+#2d3748; margin-bottom:15px; line-height:1.3;" class=3D"mobile-title">How P=
+ayment Links Make You Look More Professional</td>
+                                    </tr> -->
+                                    <tr>
+                                        <td style=3D"color:#718096; font-si=
+ze:14px; margin-bottom:20px; display:block;">07 Jan 2026</td>
+                                    </tr>
+                                </table>
+                               =20
+                                <!-- Introduction -->
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" style=3D"margin-bottom:30px;">
+                                    <tr>
+                                        <td style=3D"font-size:16px; color:=
+#4a5568; line-height:1.6;" class=3D"mobile-text">
+                                            <!-- <h3>SMEFest2026 =E2=80=93 =
+the best one yet !!!</h3> -->
+                                            <p style=3D"margin:0 0 15px 0;"=
+>
+                                                <h3><strong>Get a step ahea=
+d at  SMEFest2026.</strong></h3>
+                                                It's 7 days into the new ye=
+ar, and as you probably already know, new tax policies=20
+                                                are already setting in! (yo=
+u might've gotten an email from your bank about it, lol).
+                                            </p>
+                                            <p>
+                                                While these new changes are=
+ upsetting for some. Few are unshaken. <br>
+                                                Building resilience is key.=
+<br>
+                                                That's why you need to be a=
+t SMEFest!
+                                            </p>
+                                            </td>
+                                       </tr>
+                                </table>   =20
+                                   <table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%" style=3D"margin:20px 0;">
+                                    <tr>
+                                        <td align=3D"center" style=3D"backg=
+round-color:#f0f4f8; height:250px; border-radius:6px; color:#7a8ca5; font-s=
+tyle:italic;" class=3D"mobile-image">
+                                            <img src=3D"https://mcuserconte=
+nt.com/181f25fcd28e875f95d9360f6/images/efd74447-aa56-b883-3597-1d128a3d838=
+a.jpeg" alt=3D"Building Resilience" width=3D"100%" style=3D"display:block; =
+max-width:100%; height:auto; border-radius:6px;">
+                                        </td>
+                                    </tr>
+                                </table> =20
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" style=3D"margin-bottom:30px;">
+                                    <tr>
+                                        <td style=3D"font-size:16px; color:=
+#4a5568; line-height:1.6;" class=3D"mobile-text">
+                                            <p style=3D"margin:0 0 15px 0;"=
+>
+                                                <strong>Here are the Deets:=
+<br></strong>=20
+                                                <ul>
+                                                    <li><strong>Date:</stro=
+ng> Jan 17th.</li>                   =20
+                                                    <li><strong>=E2=81=A0Lo=
+cation:</strong> University of Lagos, FSS Main Auditorium.</li>
+                                                    <li><strong>Dress Code:=
+</strong> A touch of white</li>
+                                                </ul>
+                                            </p>
+
+                                            <p style=3D"margin:0 0 15px 0;"=
+>
+                                                This is your chance to netw=
+ork with founders, connect with=20
+                                                investors, and get expert i=
+nsights on growth, taxes, and=20
+                                                resilience<br><br>
+                                                I hope to see you there!
+
+                                            </p>
+                                     =20
+                                                <p style=3D"margin:0 0 15px=
+ 0;">
+                                                Best<br>
+                                                Temi from Jsper.</p>
+                     =20
+                                        </td>
+                                    </tr>
+                                </table>
+                               =20
+                     =20
+                            </td>
+                        </tr>
+                       =20
+                        <!-- Footer -->
+                        <tr>
+                            <td style=3D"background-color:#2d3748; color:#a=
+0aec0; padding:25px; text-align:center; font-size:14px;" class=3D"mobile-pa=
+dding">
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%">
+                                    <tr>
+                                        <td>
+                                            <!-- <p style=3D"margin:0 0 15p=
+x 0; font-size:14px; color:#a0aec0; line-height:1.5;">Jasper Payments - Mak=
+ing transactions seamless and professional</p>
+                                            <p style=3D"margin:0 0 15px 0; =
+font-size:14px; color:#a0aec0; line-height:1.5;">You're receiving this emai=
+l because you signed up for Jasper Payments updates.</p> -->
+                                            <p style=3D"margin:0; font-size=
+:14px; color:#a0aec0; line-height:1.5;">
+                                                <a href=3D"https://click.se=
+ndprem.com/click.php?id=3D695ecbb4bf4703.87806883&url=3D%23" style=3D"color=
+:#a0aec0; text-decoration:underline;">Unsubscribe</a> |=20
+                                                <a href=3D"https://click.se=
+ndprem.com/click.php?id=3D695ecbb4bf4703.87806883&url=3Dhttps%3A%2F%2Fsendp=
+rem.com" style=3D"color:#a0aec0; text-decoration:underline;">Powered by Sen=
+dPrem</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                   =20
+                    <!-- Spacer for mobile -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"max-width:600px;">
+                        <tr>
+                            <td style=3D"padding:20px; font-size:0;">&nbsp;=
+</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+<img src=3D"https://click.sendprem.com/open.php?id=3D695ecbb4bf4703.8780688=
+3" width=3D"1" height=3D"1" style=3D"display:none;" /></body>
+</html>
