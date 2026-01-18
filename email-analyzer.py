@@ -40,7 +40,7 @@ TER_COL_SIZE = 60
 
 # Functions
 ##############################################################################
-def get_headers(mail_data : str, investigation):
+def get_headers(mail_data : str, investigation, attachments=None):
     '''Get Headers from mail data'''
     # Get Headers from mail data
     headers = HeaderParser().parsestr(mail_data, headersonly=True)
@@ -153,7 +153,7 @@ def get_headers(mail_data : str, investigation):
         }
        
     # MALICIOUS ATTACHMENT DETECTION (New Block)
-    if investigation and args.attachments:  # Only run if attachments exist
+    if investigation and attachments:  # Only run if attachment payloads exist
         malicious_attach_score = 0
         malicious_attachments = []
         

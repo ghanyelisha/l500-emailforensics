@@ -20,6 +20,13 @@ options:
    Name of the Output file (Only HTML format supported)
 ```
 
+## Web Upload (No CLI)
+Run a local upload page and get the full HTML report without using command-line flags:
+```
+python3 web_app.py
+```
+Then open `http://127.0.0.1:8000` in your browser and upload a `.eml` file.
+
 ## Run All
 This command will get you Headers, Links, Attachments, and Digests with Investigations:
 ```
@@ -70,7 +77,7 @@ multipart/alternative; boundary=335b23d5689bd75ab002f9c46a6e8023c265d60dd923308d
 _________________________________________________________
 _________________________________________________________
 [date]
-Fri, 25 Nov 2022 12:36:36 +0000 (UTC)
+F , 25 Nov 2022 12:36:36 +0000 (UTC)
 _________________________________________________________
 _________________________________________________________
 [subject]
